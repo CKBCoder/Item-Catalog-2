@@ -1,0 +1,16 @@
+{
+	"web":
+	{
+		"client_id":"517314527884-m6l711k31gjbermi32aodo7ee6ucnu1e.apps.googleusercontent.com",
+		"project_id":"item-catalog-225020",
+		"auth_uri":"https://accounts.google.com/o/oauth2/auth",
+		"token_uri":"https://www.googleapis.com/oauth2/v3/token",
+		"auth_provider_x509_cert_url":"https://www.googleapis.com/oauth2/v1/certs",
+		"client_secret":"V5Cz0eLrpLfNUTZPKVDqpxn4",
+		"redirect_uris":[
+			"http://localhost:5000/login",
+			"http://localhost:5000/gconnect"
+		],
+		"javascript_origins":["http://localhost:5000"]
+	}
+}

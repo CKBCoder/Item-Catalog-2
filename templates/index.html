@@ -1,0 +1,32 @@
+{% extends "layout.html" %}
+{% block title %}Home{% endblock %}
+
+{% block content %}
+  <div class="container sections">  
+    <div class="row">
+      <div class="col-md-3" style="background-color:white; padding-top: 8px;">
+        <h2>Categories</h2><hr>
+        {% for category in categories %}
+          <a href="{{ url_for('show_items_in_category', category_id=category.id) }}"><p style="color:red;">{{ category.name }}</p></a>
+        {% endfor %}
+      </div>
+
+      <div style="margin-bottom: 10px; margin-top: 10px; border-right: 1px solid gray;"> </div>
+
+      <div class="col-md-8" style="background-color:white; padding-top: 8px;">
+        {% if 'username' in session %}
+          <div class="row">
+            <div class="col-md-12">
+              <a href="{{ url_for('add_item') }}"><button class="btn btn-success"><i class="fas fa-plus text-and-icon"></i>Add Item</button></a>
+            </div>
+          </div>
+        {% endif %}
+        <h2>Latest Items</h2><hr>
+        {% for item in items %}
+          <a href="{{ url_for('view_item', item_id=item.id) }}"><p><span style="color:red;">{{ item.name }}</span> <span style="color:gray; font-style: italic;">({{ item.category.name }})</span></p></a>
+        {% endfor %}
+      </div>
+    </div>
+  </div>
+</div>
+{% endblock %}
